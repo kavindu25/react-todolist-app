@@ -26,10 +26,16 @@ const CourseInput = (props) => {
   return (
     <form onSubmit={formSubmitHandler}>
       <div className={`form-control ${!isValidInput ? "invalid" : ""}`}>
-        <label>To-do List Item</label>
+        {isValidInput ? (
+          <label>To-do List Item</label>
+        ) : (
+          <label>Please fill the form and click on the add item button.</label>
+        )}
         <input type="text" onChange={goalInputChangeHandler} />
       </div>
-      <Button type="submit"><b>Add Item</b></Button>
+      <Button type="submit">
+        <b>Add Item</b>
+      </Button>
     </form>
   );
 };
